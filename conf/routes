@@ -11,3 +11,8 @@ GET     /message                    controllers.AsyncController.message
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# Update Drivers current locations (latitude, longitude)
+PUT     /drivers                    controllers.DriverController.update(driverId: Long, latitude: Double, longitude: Double)
+# Where's my drivers
+GET     /drivers                    controllers.DriverController.search(latitude: Double, longitude: Double, radius: Long ?= 5000L, limit: Int ?= 10)
