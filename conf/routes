@@ -16,3 +16,5 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 PUT     /drivers                    controllers.DriverController.update(driverId: Long, latitude: Double, longitude: Double)
 # Where's my drivers
 GET     /drivers                    controllers.DriverController.search(latitude: Double, longitude: Double, radius: Long ?= 5000L, limit: Int ?= 10)
+# Get all drivers
+GET     /drivers/list               controllers.DriverController.list()
