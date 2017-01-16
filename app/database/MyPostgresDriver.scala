@@ -27,6 +27,12 @@ trait MyPostgresDriver extends ExPostgresDriver
     with RangeImplicits
     with HStoreImplicits
     with SearchImplicits
+    with PostGISImplicits
+    with PostGISAssistants
+    with PlayJsonImplicits
+    with SimpleArrayPlainImplicits
+    with PostGISPlainImplicits
+    with PlayJsonPlainImplicits
     with SearchAssistants {
     implicit val strListTypeMapper = new SimpleArrayJdbcType[String]("text").to(_.toList)
     implicit val playJsonArrayTypeMapper =

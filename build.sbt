@@ -15,6 +15,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick" % "3.1.0",
   "com.typesafe.play" %% "play-slick" % "2.0.2",
   "com.typesafe.play" %% "play-slick-evolutions" % "2.0.2",
+  "com.vividsolutions" % "jts" % "1.13",
   "com.github.tminglei" %% "slick-pg" % "0.14.4",
   "com.github.tminglei" %% "slick-pg_date2" % "0.14.4",
   "com.github.tminglei" %% "slick-pg_jts" % "0.14.4",
