@@ -35,5 +35,12 @@ INSERT INTO drivers(name, vehicle) VALUES
 ,('driver 97', 'bike'),('driver 98', 'bike'),('driver 99', 'bike')
 ,('driver 100', 'bike');
 
+INSERT INTO drivers_location (driver_id, location) VALUES
+((select id from drivers where name = 'driver 1'),(ST_SetSRID(ST_MakePoint(12.97161923, 77.59463452),4326))),
+((select id from drivers where name = 'driver 2'),(ST_SetSRID(ST_MakePoint(12.97161929, 77.59463459),4326))),
+((select id from drivers where name = 'driver 3'),(ST_SetSRID(ST_MakePoint(12.97161925, 77.59463453),4326))),
+((select id from drivers where name = 'driver 4'),(ST_SetSRID(ST_MakePoint(12.97161927, 77.59463456),4326)))
+;
 # --- Downs!
 DELETE FROM drivers;
+DELETE FROM drivers_location;

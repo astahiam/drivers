@@ -1,5 +1,5 @@
-This is your new Play application
-=================================
+This is your new Drivers Play application
+=========================================
 
 This file will be packaged with your application when using `activator dist`.
 
@@ -47,3 +47,31 @@ Filters
 - ExampleFilter.scala
 
   A simple filter that adds a header to every response.
+
+Database
+========
+PostgreSQL with extension postgis, cube, and earthdistance.
+The tables are: drivers and drivers_location
+The SQL script located at conf/evolutions/default/1.sql and 2.sql
+
+REST API
+========
+Where's my driver sample calls
+GET localhost:9000/drivers?latitude=12.97161923&longitude=77.59463453
+the radius and limit parameter is optional.
+
+Update drivers location calls
+PUT localhost:9000/drivers?driverId=104&latitude=12.97161923&longitude=77.59463452
+
+Additional calls to get all drivers
+GET localhost:9000/drivers/list
+
+HOW TO RUN
+==========
+create the database : drivers
+create extensions : postgis, cube, and earthdistance
+type in the : activator run
+if the evolutions script is not running well, please run the SQL script manually on postgreSQL or via PgAdmin
+in the terminal or console applications, then try the API calls.
+
+@copyright Ryan Kharisma Rakhmat.
